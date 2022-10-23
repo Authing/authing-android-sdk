@@ -8,6 +8,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.Objects;
 
 import cn.authing.api.Authing;
@@ -83,20 +84,28 @@ public class Guardian {
         builder.addHeader("x-authing-app-id", Authing.getAppId());
         builder.addHeader("x-authing-request-from", Const.SDK_TAG + Const.SDK_VERSION);
         builder.addHeader("x-authing-lang", Util.getLangHeader());
-        LoginTokenResponse tokenResponse = Authing.getToken();
-        if (tokenResponse != null) {
-            String token = tokenResponse.getIdToken();
-            if (!Util.isNull(token)) {
-                builder.addHeader("Authorization", "Bearer " + token);
-            } else {
-                token = tokenResponse.getAccessToken();
+
+        String[] endpointsToSendBasicHeader = {
+                "/api/v3/signin",
+                "/api/v3/signin-by-mobile"
+        };
+        if (!Arrays.asList(endpointsToSendBasicHeader).contains(endpoint)) {
+            LoginTokenResponse tokenResponse = Authing.getToken();
+            if (tokenResponse != null) {
+                String token = tokenResponse.getAccessToken();
                 if (!Util.isNull(token)) {
                     builder.addHeader("Authorization", "Bearer " + token);
+                } else {
+                    token = tokenResponse.getIdToken();
+                    if (!Util.isNull(token)) {
+                        builder.addHeader("Authorization", "Bearer " + token);
+                    }
                 }
+            } else if (MFA_TOKEN != null) {
+                builder.addHeader("Authorization", "Bearer " + MFA_TOKEN);
             }
-        } else if (MFA_TOKEN != null) {
-            builder.addHeader("Authorization", "Bearer " + MFA_TOKEN);
         }
+
         if (null != body) {
             MediaType type = (body.startsWith("{") || body.startsWith("[")) && (body.endsWith("]") || body.endsWith("}")) ? Const.JSON : Const.FORM;
             RequestBody requestBody = RequestBody.create(body, type);
