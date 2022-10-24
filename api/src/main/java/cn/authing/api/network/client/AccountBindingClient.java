@@ -39,7 +39,7 @@ public class AccountBindingClient extends BaseClient {
     }
 
     public void getExtIdps(@NotNull AuthCallback callback) {
-        Guardian.get("/api/v3/get-extidps", callback::call);
+        Guardian.get("/api/v3/get-application-enabled-extidps", callback::call);
     }
 
 }
