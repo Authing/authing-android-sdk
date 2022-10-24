@@ -1,6 +1,6 @@
-package cn.authing.api.ut.v3;
+package cn.authing.api.demo.ut.v3;
 
-import cn.authing.api.ut.TestCase;
+import cn.authing.api.demo.ut.TestCase;
 
 public class TestCaseV3Util {
 

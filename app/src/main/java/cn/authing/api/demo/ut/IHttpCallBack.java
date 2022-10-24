@@ -1,4 +1,4 @@
-package cn.authing.api.ut;
+package cn.authing.api.demo.ut;
 
 import cn.authing.api.data.AuthResponse;
 

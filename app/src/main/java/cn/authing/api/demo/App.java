@@ -1,6 +1,8 @@
-package cn.authing.api;
+package cn.authing.api.demo;
 
 import android.app.Application;
+
+import cn.authing.api.Authing;
 
 public class App extends Application {
 

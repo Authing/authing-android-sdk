@@ -1,4 +1,4 @@
-package cn.authing.api;
+package cn.authing.api.demo;
 
 import android.content.Context;
 import android.graphics.Canvas;

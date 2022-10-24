@@ -1,4 +1,4 @@
-package cn.authing.api.ut;
+package cn.authing.api.demo.ut;
 
 import android.os.Parcel;
 import android.os.Parcelable;

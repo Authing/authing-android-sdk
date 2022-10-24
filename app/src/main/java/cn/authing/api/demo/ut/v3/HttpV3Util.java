@@ -1,4 +1,4 @@
-package cn.authing.api.ut.v3;
+package cn.authing.api.demo.ut.v3;
 
 import android.text.TextUtils;
 import android.util.Log;
@@ -25,8 +25,8 @@ import cn.authing.api.params.type.Gender;
 import cn.authing.api.params.type.PasswordEncryptType;
 import cn.authing.api.params.type.ResourceType;
 import cn.authing.api.params.type.SmsType;
-import cn.authing.api.ut.IHttpCallBack;
-import cn.authing.api.ut.TestCase;
+import cn.authing.api.demo.ut.IHttpCallBack;
+import cn.authing.api.demo.ut.TestCase;
 
 public class HttpV3Util {
 

@@ -1,4 +1,4 @@
-package cn.authing.api.ut;
+package cn.authing.api.demo.ut;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,8 +14,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.authing.api.R;
-import cn.authing.api.ut.v3.TestCaseV3Util;
+import cn.authing.api.demo.R;
+import cn.authing.api.demo.ut.v3.TestCaseV3Util;
 
 public class UTActivity extends AppCompatActivity implements ExpandableListView.OnGroupClickListener, ExpandableListView.OnChildClickListener {
 

@@ -1,4 +1,4 @@
-package cn.authing.api.ut;
+package cn.authing.api.demo.ut;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -15,9 +15,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
-import cn.authing.api.R;
 import cn.authing.api.data.AuthResponse;
-import cn.authing.api.ut.v3.HttpV3Util;
+import cn.authing.api.demo.R;
+import cn.authing.api.demo.ut.v3.HttpV3Util;
 
 
 public class UTTestAllActivity extends AppCompatActivity implements IHttpCallBack {
