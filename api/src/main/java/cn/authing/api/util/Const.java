@@ -4,8 +4,8 @@ import okhttp3.MediaType;
 
 public class Const {
 
-    public static final String SDK_TAG = "Guard-Android@";
-    public static final String SDK_VERSION = "1.4.3";
+    public static final String SDK_TAG = "SDK-Android@";
+    public static final String SDK_VERSION = "1.0.0";
 
     public static final String EC_TYPE_WECHAT = "wechat:mobile";
     public static final String EC_TYPE_WECHAT_COM = "wechatwork:mobile";
