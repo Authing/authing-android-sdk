@@ -236,10 +236,10 @@ public class HttpV3Util {
         AuthClient authClient = new AuthClient();
         AuthOptions options = new AuthOptions();
         options.setAutoRegister(true);
-        options.setPasswordEncryptType(PasswordEncryptType.none);
+        options.setPasswordEncryptType(PasswordEncryptType.sm2);
         authClient.signInByAccountPassword(paramsArr[0],
                 paramsArr.length > 1 ? paramsArr[1] : "",
-                null,
+                options,
                 new AuthCallback() {
                     @Override
                     public void call(AuthResponse response) {
@@ -583,7 +583,7 @@ public class HttpV3Util {
 
     private static void unBindPhone(IHttpCallBack callBack) {
         AuthClient authClient = new AuthClient();
-        authClient.unBindPhone(new AuthCallback() {
+        authClient.unBindPhone("", new AuthCallback() {
 
             @Override
             public void call(AuthResponse response) {
@@ -643,7 +643,7 @@ public class HttpV3Util {
 
     private static void unbindEmail(IHttpCallBack callBack) {
         AuthClient authClient = new AuthClient();
-        authClient.unBindEmail(new AuthCallback() {
+        authClient.unBindEmail("", new AuthCallback() {
 
             @Override
             public void call(AuthResponse response) {

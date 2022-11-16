@@ -493,10 +493,11 @@ public class AuthClient {
     /**
      * 解绑手机号
      *
+     * @param passCode 短信验证码，注意一个短信验证码指南使用一次，且有过期时间。
      * @param callback 回调
      */
-    public void unBindPhone(@NotNull AuthCallback callback) {
-        UserClient.getInstance().unBindPhone(callback);
+    public void unBindPhone(String passCode, @NotNull AuthCallback callback) {
+        UserClient.getInstance().unBindPhone(passCode, callback);
     }
 
     /**
@@ -513,10 +514,11 @@ public class AuthClient {
     /**
      * 解绑邮箱
      *
+     * @param passCode 短信验证码，注意一个短信验证码指南使用一次，且有过期时间。
      * @param callback 回调
      */
-    public void unBindEmail(@NotNull AuthCallback callback) {
-        UserClient.getInstance().unBindEmail(callback);
+    public void unBindEmail(String passCode, @NotNull AuthCallback callback) {
+        UserClient.getInstance().unBindEmail(passCode, callback);
     }
 
     /**

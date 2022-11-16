@@ -98,13 +98,15 @@ public class UserClient extends BaseClient {
         Guardian.post("/api/v3/bind-phone", body, callback::call);
     }
 
-    public void unBindPhone(@NotNull AuthCallback callback) {
+    public void unBindPhone(String passCode, @NotNull AuthCallback callback) {
+        JSONObject body = new JSONObject();
         try {
-            JSONObject body = new JSONObject();
-            Guardian.post("/api/v3/unbind-phone", body, callback::call);
+            body.put("passCode", passCode);
         } catch (Exception e) {
             error(e, callback);
+            return;
         }
+        Guardian.post("/api/v3/unbind-phone", body, callback::call);
     }
 
     public void bindEmail(String email, String passCode, @NotNull AuthCallback callback) {
@@ -119,13 +121,15 @@ public class UserClient extends BaseClient {
         Guardian.post("/api/v3/bind-email", body, callback::call);
     }
 
-    public void unBindEmail(@NotNull AuthCallback callback) {
+    public void unBindEmail(String passCode, @NotNull AuthCallback callback) {
+        JSONObject body = new JSONObject();
         try {
-            JSONObject body = new JSONObject();
-            Guardian.post("/api/v3/unbind-email", body, callback::call);
+            body.put("passCode", passCode);
         } catch (Exception e) {
             error(e, callback);
+            return;
         }
+        Guardian.post("/api/v3/unbind-email", body, callback::call);
     }
 
     public void updatePhoneRequest(String newPhoneCountryCode, String newPhoneNumber, String newPhonePassCode,
