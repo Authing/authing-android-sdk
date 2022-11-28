@@ -273,6 +273,18 @@ public class AuthClient {
     }
 
     /**
+     * 使用二维码的 ticket 换取用户的 access_token 和 id_token
+     *
+     * @param ticket        当二维码状态为已授权时返回
+     * @param client_id     应用 ID。当应用的「换取 token 身份验证方式」配置为 client_secret_post 需要传。
+     * @param client_secret 应用密钥。当应用的「换取 token 身份验证方式」配置为 client_secret_post 需要传。
+     * @param callback      回调
+     */
+    public void exchangeTokenSetWithQRCode(String ticket, String client_id, String client_secret, @NotNull AuthCallback callback) {
+        SignInClient.getInstance().exchangeTokenSetWithQRCode(ticket, client_id, client_secret, callback);
+    }
+
+    /**
      * 自建 APP 扫码登录：APP 端修改二维码状态
      *
      * @param qrcodeId 二维码唯一 ID

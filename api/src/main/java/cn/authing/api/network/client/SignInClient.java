@@ -247,6 +247,19 @@ public class SignInClient extends BaseClient {
         Guardian.get("/api/v3/check-qrcode-status?qrcodeId=" + qrcodeId, callback::call);
     }
 
+    public void exchangeTokenSetWithQRCode(String ticket, String client_id, String client_secret, @NotNull AuthCallback callback) {
+        JSONObject body = new JSONObject();
+        try {
+            body.put("ticket", ticket);
+            body.put("client_id", client_id);
+            body.put("client_secret", client_secret);
+        } catch (Exception e) {
+            error(e, callback);
+            return;
+        }
+        Guardian.post("/api/v3/exchange-tokenset-with-qrcode-ticket", body, callback::call);
+    }
+
     public void changeQrCodeStatus(String qrcodeId, Action action, @NotNull AuthCallback callback) {
         JSONObject body = new JSONObject();
         try {
