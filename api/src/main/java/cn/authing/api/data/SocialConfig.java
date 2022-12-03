@@ -8,6 +8,7 @@ public class SocialConfig {
     private String schema;
     private String businessId;
     private String clientId;
+    private String identifier;
 
     public String getId() {
         return id;
@@ -63,5 +64,13 @@ public class SocialConfig {
 
     public void setClientId(String clientId) {
         this.clientId = clientId;
+    }
+
+    public String getIdentifier() {
+        return identifier;
+    }
+
+    public void setIdentifier(String identifier) {
+        this.identifier = identifier;
     }
 }

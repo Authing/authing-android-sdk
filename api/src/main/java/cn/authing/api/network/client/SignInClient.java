@@ -188,37 +188,37 @@ public class SignInClient extends BaseClient {
             try {
                 body.put("connection", connection.toString());
                 if (connection == Connection.wechat) {
-                    body.put("extIdpConnidentifier", config.getSocialConnectionId(Const.EC_TYPE_WECHAT));
+                    body.put("extIdpConnidentifier", config.getSocialIdentifier(Const.EC_TYPE_WECHAT));
                     JSONObject wechatPayload = new JSONObject();
                     wechatPayload.put("code", code);
                     body.put("wechatPayload", wechatPayload);
                 } else if (connection == Connection.alipay) {
-                    body.put("extIdpConnidentifier", config.getSocialConnectionId(Const.EC_TYPE_ALIPAY));
+                    body.put("extIdpConnidentifier", config.getSocialIdentifier(Const.EC_TYPE_ALIPAY));
                     JSONObject alipayPayload = new JSONObject();
                     alipayPayload.put("code", code);
                     body.put("alipayPayload", alipayPayload);
                 } else if (connection == Connection.wechatwork) {
-                    body.put("extIdpConnidentifier", config.getSocialConnectionId(Const.EC_TYPE_WECHAT_COM));
+                    body.put("extIdpConnidentifier", config.getSocialIdentifier(Const.EC_TYPE_WECHAT_COM));
                     JSONObject wechatworkPayload = new JSONObject();
                     wechatworkPayload.put("code", code);
                     body.put("wechatworkPayload", wechatworkPayload);
                 } else if (connection == Connection.wechatwork_agency) {
-                    body.put("extIdpConnidentifier", config.getSocialConnectionId(Const.EC_TYPE_WECHAT_COM_AGENCY));
+                    body.put("extIdpConnidentifier", config.getSocialIdentifier(Const.EC_TYPE_WECHAT_COM_AGENCY));
                     JSONObject wechatworkAgencyPayload = new JSONObject();
                     wechatworkAgencyPayload.put("code", code);
                     body.put("wechatworkAgencyPayload", wechatworkAgencyPayload);
                 } else if (connection == Connection.lark_internal) {
-                    body.put("extIdpConnidentifier", config.getSocialConnectionId(Const.EC_TYPE_LARK_INTERNAL));
+                    body.put("extIdpConnidentifier", config.getSocialIdentifier(Const.EC_TYPE_LARK_INTERNAL));
                     JSONObject larkInternalPayload = new JSONObject();
                     larkInternalPayload.put("code", code);
                     body.put("larkInternalPayload", larkInternalPayload);
                 } else if (connection == Connection.lark_public) {
-                    body.put("extIdpConnidentifier", config.getSocialConnectionId(Const.EC_TYPE_LARK_PUBLIC));
+                    body.put("extIdpConnidentifier", config.getSocialIdentifier(Const.EC_TYPE_LARK_PUBLIC));
                     JSONObject larkPublicPayload = new JSONObject();
                     larkPublicPayload.put("code", code);
                     body.put("larkPublicPayload", larkPublicPayload);
                 } else if (connection == Connection.google) {
-                    body.put("extIdpConnidentifier", config.getSocialConnectionId(Const.EC_TYPE_GOOGLE));
+                    body.put("extIdpConnidentifier", config.getSocialIdentifier(Const.EC_TYPE_GOOGLE));
                     JSONObject googlePayload = new JSONObject();
                     googlePayload.put("code", code);
                     body.put("googlePayload", googlePayload);

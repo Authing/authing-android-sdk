@@ -307,6 +307,10 @@ public class Config {
         return getSocialValue(type, "businessId");
     }
 
+    public String getSocialIdentifier(String type) {
+        return getSocialValue(type, "identifier");
+    }
+
     private static List<SocialConfig> toSocialList(JSONArray array) throws JSONException {
         List<SocialConfig> list = new ArrayList<>();
         int size = array.length();
@@ -324,6 +328,10 @@ public class Config {
             if (obj.has("type")) {
                 String provider = obj.getString("type");
                 config.setType(provider);
+            }
+            if (obj.has("identifier")) {
+                String identifier = obj.getString("identifier");
+                config.setIdentifier(identifier);
             }
             if (obj.has("fields")) {
                 JSONObject fields = obj.getJSONObject("fields");
@@ -379,6 +387,9 @@ public class Config {
                         break;
                     case "clientId":
                         value = c.getClientId();
+                        break;
+                    case "identifier":
+                        value = c.getIdentifier();
                         break;
                 }
                 break;
