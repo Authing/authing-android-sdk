@@ -21,7 +21,7 @@ You can quickly build user login authentication capabilities using the Authing G
 
 ## Documentation
 
-- [Click me for English documentation](https://docs.authing.cn/v3/reference/mobile/sdk-for-android/)
+- [Click me for English documentation](https://docs.authing.cn/v3/reference/mobile/sdk-for-android/install.html)
 
 ## Authing Console Configuration
 

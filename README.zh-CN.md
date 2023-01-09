@@ -21,7 +21,7 @@
 
 ## 参考文档
 
-- [中文文档请移步至这里查看](https://docs.authing.cn/v3/reference/mobile/sdk-for-android/)
+- [中文文档请移步至这里查看](https://docs.authing.cn/v3/reference/mobile/sdk-for-android/install.html)
 
 ## Authing 控制台配置
 
