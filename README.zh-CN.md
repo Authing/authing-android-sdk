@@ -1,4 +1,4 @@
-# Authing Android SDK
+# Authing Android API SDK
 
 <div align=center>
   <img width="250" src="https://files.authing.co/authing-console/authing-logo-new-20210924.svg" />
@@ -13,7 +13,7 @@
 
 ## 简介
 
-你可以使用 Authing Guard SDK 快速构建用户登录认证能力。
+你可以使用 Authing Android API SDK 快速构建用户登录认证能力。
 
 ## 示例
 

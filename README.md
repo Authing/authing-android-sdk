@@ -1,4 +1,4 @@
-# Authing Android SDK
+# Authing Android API SDK
 
 <div align=center>
   <img width="250" src="https://files.authing.co/authing-console/authing-logo-new-20210924.svg" />
@@ -13,7 +13,7 @@
 
 ## Introduction
 
-You can quickly build user login authentication capabilities using the Authing Guard SDK.
+You can quickly build user login authentication capabilities using the Authing Android API SDK.
 
 ## Sample
 
