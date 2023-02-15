@@ -311,6 +311,14 @@ public class Config {
         return getSocialValue(type, "identifier");
     }
 
+    public String getSocialMobileAppID(String type) {
+        return getSocialValue(type, "mobileAppID");
+    }
+
+    public String getSocialOriginalID(String type) {
+        return getSocialValue(type, "originalID");
+    }
+
     private static List<SocialConfig> toSocialList(JSONArray array) throws JSONException {
         List<SocialConfig> list = new ArrayList<>();
         int size = array.length();
@@ -353,6 +361,12 @@ public class Config {
                 if (fields.has("clientID")) {
                     config.setClientId(fields.getString("clientID"));
                 }
+                if (fields.has("mobileAppID")) {
+                    config.setMobileAppID(fields.getString("mobileAppID"));
+                }
+                if (fields.has("originalID")) {
+                    config.setOriginalID(fields.getString("originalID"));
+                }
             }
             list.add(config);
         }
@@ -390,6 +404,12 @@ public class Config {
                         break;
                     case "identifier":
                         value = c.getIdentifier();
+                        break;
+                    case "mobileAppID":
+                        value = c.getMobileAppID();
+                        break;
+                    case "originalID":
+                        value = c.getOriginalID();
                         break;
                 }
                 break;

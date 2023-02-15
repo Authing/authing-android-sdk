@@ -163,12 +163,41 @@ public class SignInClient extends BaseClient {
         getPublicConfig(callback, (ok, config) -> {
             JSONObject body = new JSONObject();
             try {
-                body.put("connection", "yidun");
+                body.put("connection", Connection.yidun.toString());
                 body.put("extIdpConnidentifier", config.getSocialConnectionId(Const.EC_TYPE_YI_DUN));
                 JSONObject yidunPayload = new JSONObject();
                 yidunPayload.put("token", token);
                 yidunPayload.put("accessToken", accessToken);
                 body.put("yidunPayload", yidunPayload);
+                if (options == null) {
+                    body.put("options", new AuthOptions().toJSON());
+                } else {
+                    body.put("options", options.toJSON());
+                }
+            } catch (Exception e) {
+                error(e, callback);
+                return;
+            }
+            singInBySocial(body, callback);
+        });
+    }
+
+    public void signInByWechatMiniProgram(String code, String phoneInfoCode, AuthOptions options, @NotNull AuthCallback callback) {
+        getPublicConfig(callback, (ok, config) -> {
+            JSONObject body = new JSONObject();
+            try {
+                body.put("connection", Connection.wechat_mini_program_code_and_phone.toString());
+                body.put("extIdpConnidentifier", config.getSocialConnectionId(Const.EC_TYPE_WECHAT_MINI_PROGRAM));
+                JSONObject wechatMiniProgramCodeAndPhonePayload = new JSONObject();
+                JSONObject wxLoginInfo = new JSONObject();
+                wxLoginInfo.put("encryptedData", "");
+                wxLoginInfo.put("iv", "");
+                wxLoginInfo.put("code", code);
+                wechatMiniProgramCodeAndPhonePayload.put("wxLoginInfo", wxLoginInfo);
+                JSONObject wxPhoneInfo = new JSONObject();
+                wxPhoneInfo.put("code", phoneInfoCode);
+                wechatMiniProgramCodeAndPhonePayload.put("wxPhoneInfo", wxPhoneInfo);
+                body.put("wechatMiniProgramCodeAndPhonePayload", wechatMiniProgramCodeAndPhonePayload);
                 if (options == null) {
                     body.put("options", new AuthOptions().toJSON());
                 } else {
@@ -222,6 +251,11 @@ public class SignInClient extends BaseClient {
                     JSONObject googlePayload = new JSONObject();
                     googlePayload.put("code", code);
                     body.put("googlePayload", googlePayload);
+                } else if (connection == Connection.facebook) {
+                    body.put("extIdpConnidentifier", config.getSocialIdentifier(Const.EC_TYPE_FACE_BOOK));
+                    JSONObject facebookPayload = new JSONObject();
+                    facebookPayload.put("access_token", code);
+                    body.put("facebookPayload", facebookPayload);
                 }
                 if (options == null) {
                     body.put("options", new AuthOptions().toJSON());

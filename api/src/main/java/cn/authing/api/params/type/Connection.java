@@ -26,7 +26,27 @@ public enum Connection {
      */
     lark_public,
     /**
+     * 网易易盾一键登录
+     */
+    yidun,
+    /**
+     * 微信小程序使用 code 登录
+     */
+    wechat_mini_program_code,
+    /**
+     * 微信小程序使用手机号登录
+     */
+    wechat_mini_program_phone,
+    /**
+     * 微信小程序使用 code 和手机号登录
+     */
+    wechat_mini_program_code_and_phone,
+    /**
      * Google 移动端社会化登录
      */
     google,
+    /**
+     * Facebook 移动端社会化登录
+     */
+    facebook,
 }

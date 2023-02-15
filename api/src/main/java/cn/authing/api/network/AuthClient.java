@@ -239,6 +239,18 @@ public class AuthClient {
     }
 
     /**
+     * 登录 - AP P拉起微信小程序授权登录
+     *
+     * @param code          wx.login 接口返回的用户 code
+     * @param phoneInfoCode 小程序获取用户手机号返回的 code
+     * @param options       可选参数
+     * @param callback      回调
+     */
+    public void signInByWechatMiniProgram(String code, String phoneInfoCode, AuthOptions options, @NotNull AuthCallback callback) {
+        SignInClient.getInstance().signInByWechatMiniProgram(code, phoneInfoCode, options, callback);
+    }
+
+    /**
      * 登录 - 社会化身份源
      *
      * @param connection 移动端社会化登录类型：
@@ -249,9 +261,8 @@ public class AuthClient {
      *                   lark_internal: 飞书移动端企业自建应用
      *                   lark_public: 飞书移动端应用商店应用
      *                   yidun: 网易易盾一键登录
-     *                   wechat_mini_program_code: 微信小程序使用 code 登录
-     *                   wechat_mini_program_phone : 微信小程序使用手机号登录
      *                   google: Google 移动端社会化登录
+     *                   facebook: Facebook 移动端社会化登录
      * @param code       授权码
      * @param options    可选参数
      * @param callback   回调

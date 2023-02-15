@@ -9,6 +9,8 @@ public class SocialConfig {
     private String businessId;
     private String clientId;
     private String identifier;
+    private String mobileAppID;
+    private String originalID;
 
     public String getId() {
         return id;
@@ -72,5 +74,21 @@ public class SocialConfig {
 
     public void setIdentifier(String identifier) {
         this.identifier = identifier;
+    }
+
+    public String getMobileAppID() {
+        return mobileAppID;
+    }
+
+    public void setMobileAppID(String mobileAppID) {
+        this.mobileAppID = mobileAppID;
+    }
+
+    public String getOriginalID() {
+        return originalID;
+    }
+
+    public void setOriginalID(String originalID) {
+        this.originalID = originalID;
     }
 }
