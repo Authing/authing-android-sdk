@@ -164,7 +164,7 @@ public class SignInClient extends BaseClient {
             JSONObject body = new JSONObject();
             try {
                 body.put("connection", Connection.yidun.toString());
-                body.put("extIdpConnidentifier", config.getSocialConnectionId(Const.EC_TYPE_YI_DUN));
+                body.put("extIdpConnidentifier", config.getSocialIdentifier(Const.EC_TYPE_YI_DUN));
                 JSONObject yidunPayload = new JSONObject();
                 yidunPayload.put("token", token);
                 yidunPayload.put("accessToken", accessToken);
@@ -187,7 +187,7 @@ public class SignInClient extends BaseClient {
             JSONObject body = new JSONObject();
             try {
                 body.put("connection", Connection.wechat_mini_program_code_and_phone.toString());
-                body.put("extIdpConnidentifier", config.getSocialConnectionId(Const.EC_TYPE_WECHAT_MINI_PROGRAM));
+                body.put("extIdpConnidentifier", config.getSocialIdentifier(Const.EC_TYPE_WECHAT_MINI_PROGRAM));
                 JSONObject wechatMiniProgramCodeAndPhonePayload = new JSONObject();
                 JSONObject wxLoginInfo = new JSONObject();
                 wxLoginInfo.put("encryptedData", "");
